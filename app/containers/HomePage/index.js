@@ -25,11 +25,12 @@ import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
+import { addCounter } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import YourAss from 'components/yourass';
-//import Button from 'components/button';
+import Button from 'components/button';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
@@ -82,8 +83,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                   value={this.props.username}
                   onChange={this.props.onChangeUsername}
                 />
-                {/*<Button onClick={this.props.onAddCount} value="click here to add"/>*/}
-                {/*Counter: {this.props.counter}*/}
+                <Button onClick={this.props.onAddCount}>click to add</Button>
+
+                Counter: {this.props.counter}
 
               </label>
             </Form>
@@ -117,7 +119,7 @@ export function mapDispatchToProps(dispatch) {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
     },
-    onAddCount: (evt) => dispatch(addCount()),
+    onAddCount: (evt) => dispatch(addCounter()),
   };
 }
 

@@ -30,7 +30,7 @@ function homeReducer(state = initialState, action) {
         .set('username', action.name.replace(/@/gi, ''));
     case ADD_COUNTER:
       return state
-        .set('counter',counter+1)
+        .set('counter',state.counter+1)
     default:
       return state;
   }
