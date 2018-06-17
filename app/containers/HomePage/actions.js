@@ -17,6 +17,7 @@
 
 import {
   CHANGE_USERNAME,
+  ADD_COUNTER
 } from './constants';
 
 /**

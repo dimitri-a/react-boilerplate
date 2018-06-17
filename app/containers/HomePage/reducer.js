@@ -13,6 +13,7 @@ import {fromJS} from 'immutable';
 
 import {
   CHANGE_USERNAME,
+  ADD_COUNTER
 } from './constants';
 
 // The initial state of the App
